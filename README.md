@@ -6,3 +6,4 @@
 - 램디스크 작전은 없던걸로.
 - Mir -> js 작업을 다시 진행. llvm-ir을 js로 옮기면서 느꼈던 것들을 mir쪽에 녹여서 진행.
 - rhs에 const value라던가, _1 = [move _2, const 2_i32, const 3_i32] 같은 사례가 있다. rhs의 타입도 항상 {ptr,size}로 하려고 했으나, 이런 const를 지원하려면 bytes로 해야하지 않을까 싶다. stack-heap과 다른 독립적인 memory의 typedarray를 만들어서 거기에 데이터를 완성시켜 rhs로 전달하거나, 아니면 임의로 stack allocate를 하여 우항을 만들어서 제공하거나. 전자는 ptr를 얻을 수 없다. 후자는 stack deallocate만 잘 하면 될 것 같다. 고민.
+- TODO: cargo rustc emit mir가 얼마나 걸리는지 확인해볼 것. 
