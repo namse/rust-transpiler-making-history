@@ -4,3 +4,4 @@
 - Mac에서 CARGO_TARGET_DIR 를 2GB ramdisk에 연결하였을때 단순 주석 추가 후 재빌드가 1.25초 걸림.
 - Mac에서 CARGO_TARGET_DIR 없이 재빌드하니 1초 미만 걸림. 왜 더 적게 걸리지? target 크기가 3.3GB인 것으로 보임. 4GB 램디스크 만들어서 재 테스트 필요해보임. 그래도 마찬가지임.
 - 램디스크 작전은 없던걸로.
+- Mir -> js 작업을 다시 진행. llvm-ir을 js로 옮기면서 느꼈던 것들을 mir쪽에 녹여서 진행.
