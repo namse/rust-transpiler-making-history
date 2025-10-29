@@ -1,3 +1,6 @@
+# 2025-10-29
+- `RUSTFLAGS="--emit mir"  cargo check` 로 재빌드하면 2~3초 정도 걸림. 그냥 cargo check은 언더1초. 모든 crate의 mir를 다시 생성하는 느낌이 들어서 ls -alh로 확인해보니 그렇지 않았음. tower-defense의 mir만 재생성하는데 mir 크기가 11M나 함.
+
 # 2025-10-28
 
 - target directory를 ramdisk로 사용하면 재빌드 속도가 1초 이내로 줄어드는 것으로 파악되었음. 하지만 윈도우즈에서는 램디스크 설정이 상당히 까다로운 것 같음. rust, cargo의 workflow를 그대로 사용할 수 있다는 최고의 장점이 있으나 플랫폼의 ramdisk 지원에 많은게 달려있어서 고민이 됨. windows같은 경우 linux에서 cross-compile이 가능하니 그렇게 해도 되지 않을까? mac, linux만 지원하면 되지 않을까?
