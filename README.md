@@ -1,5 +1,6 @@
 # 2025-10-29
 - `RUSTFLAGS="--emit mir"  cargo check` 로 재빌드하면 2~3초 정도 걸림. 그냥 cargo check은 언더1초. 모든 crate의 mir를 다시 생성하는 느낌이 들어서 ls -alh로 확인해보니 그렇지 않았음. tower-defense의 mir만 재생성하는데 mir 크기가 11M나 함. llvm ir이나 bc도 20mb 이상임...
+- cargo expand로 펼친 tower-defense 코드는 2.1MB임. 흠... 아무래도 rust코드를 바로 js로 바꾸는 것을 도전해봐야겠음.
 
 # 2025-10-28
 
