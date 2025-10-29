@@ -2,6 +2,7 @@
 - `RUSTFLAGS="--emit mir"  cargo check` 로 재빌드하면 2~3초 정도 걸림. 그냥 cargo check은 언더1초. 모든 crate의 mir를 다시 생성하는 느낌이 들어서 ls -alh로 확인해보니 그렇지 않았음. tower-defense의 mir만 재생성하는데 mir 크기가 11M나 함. llvm ir이나 bc도 20mb 이상임...
 - cargo expand로 펼친 tower-defense 코드는 2.1MB임. 흠... 아무래도 rust코드를 바로 js로 바꾸는 것을 도전해봐야겠음.
 - memory 구조를 어떻게 할 것인가? wasm식으로 메모리를 가져갈 것인가, 아니면 js gc를 이용할 것인가? 후자의 경우 코드에서 포인터를 사용하면 난감해짐. 전자의 경우 sizeof struct 를 알아내야함.
+- struct, fn 다 generic도 arg으로서 중요함. 예를들면 size_of의 경우 generic_args가 크기를 결정함. struct = fields + generic_args, fn = args + generic_args + ret + statemenets. 이런식으로 생각해야하지 않을까 싶음.
 
 # 2025-10-28
 
