@@ -3,6 +3,8 @@
 - cargo expand로 펼친 tower-defense 코드는 2.1MB임. 흠... 아무래도 rust코드를 바로 js로 바꾸는 것을 도전해봐야겠음.
 - memory 구조를 어떻게 할 것인가? wasm식으로 메모리를 가져갈 것인가, 아니면 js gc를 이용할 것인가? 후자의 경우 코드에서 포인터를 사용하면 난감해짐. 전자의 경우 sizeof struct 를 알아내야함.
 - struct, fn 다 generic도 arg으로서 중요함. 예를들면 size_of의 경우 generic_args가 크기를 결정함. struct = fields + generic_args, fn = args + generic_args + ret + statemenets. 이런식으로 생각해야하지 않을까 싶음.
+- lazy하게 type이 결정되는 경우는 type checking pass가 한번 돌아야만 결정 가능한 것 같은데... 인터프리팅 할 수 있는 것이 아닌 것 같음.
+
 
 # 2025-10-28
 
